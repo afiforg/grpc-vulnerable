@@ -27,13 +27,13 @@ const (
 
 // User represents a user in the system
 type User struct {
-	ID          int32
-	Username    string
-	Email       string
-	Role        string
+	ID           int32
+	Username     string
+	Email        string
+	Role         string
 	PasswordHash string
-	APIKey      string
-	CreatedAt   string
+	APIKey       string
+	CreatedAt    string
 }
 
 // JWT Claims structure
@@ -380,7 +380,7 @@ func (s *UserService) GetUserDetails(ctx context.Context, req *pb.GetUserDetails
 		Email:        user.Email,
 		Role:         user.Role,
 		PasswordHash: user.PasswordHash, // VULNERABLE: Should not expose
-		ApiKey:       user.APIKey,        // VULNERABLE: Should not expose
+		ApiKey:       user.APIKey,       // VULNERABLE: Should not expose
 		CreatedAt:    user.CreatedAt,
 	}, nil
 }
